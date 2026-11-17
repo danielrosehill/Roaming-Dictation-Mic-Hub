@@ -1,0 +1,35 @@
+Okay, this is my voice technology idea. That would be very, very cool. And I'll explain what my kind of first iteration of this was, what I'm thinking about for a second iteration, both pros and potential tripping points that I just thought of. So basically, if I'm at home and I'm using dictation all day, every day, it's fantastic. It's the only way for me now to use my computers.
+
+But, you know, the day I. I'm going out, coming in, I'm using different devices. So the first prototype that I did was I thought, why don't I use my phone as. Like, this is what I have. This is kind of what I carry with me the whole day. And the basic mode is just I'm dictating with my phone into my phone, which of course doesn't really need an app or a mode, but the localhost route, in other words.
+
+And then I could have a client on the desktop and have a couple of destinations. So desktop, laptop. Just take those two, for example. And what I envisioned was streaming the microphone stream from the phone out to those devices, which would require a client on those devices, of course. And basically, if I move over to my desktop, I just toggle a button on my app that says desktop, and now my microphone output is streamed to the other device and bypasses the phone.
+
+Because then if I was dictating stuff, obviously a keyboard entry on multiple things would make my phone unusable. So that was that aspect.
+
+What I thought about today was that it probably makes more sense to have a server for. A central server for. For passing through the stream so that the topology would be using my phone still have the. The app, the controller app, let's call it. Now, the question becomes, I guess if it's local, it doesn't need to even go to the server, but if it's going somewhere else, it travels through the server server streams.
+
+And that way you can sort of manage clients at the server level instead of just. It's. I think it's a very brittle design if the phone client is also the. The streaming server.
+
+The other thing I thought about was, wait. If the. If the server. If you go via the server and the server has a tailscale route to a vps, a computer on another network, you could actually have streaming. You could use your same microphone for not only routing your voice dictation to different local devices, you could even route it to a remote device as a remote virtual keyboard.
+
+Again, it's not a. Not such a simple interface or an idea, but it's just kind of one of my experimentary ideas I've thought about for a while. This would be very, very cool. The other thing that I was thinking about was for dictation. I am not a huge fan of Bluetooth microphones.
+
+What I've begun doing recently is actually using USB C microphones microphones with Android. I'm surprised to see it actually works pretty well. But if I were to do the more conventional thing, which would be, let's say I'm using a Bluetooth headset and it's got multipoint or oracast or whatever and I just toggle where it's going, that's a simpler setup. And my only thought was, well, what about if the server coming back to the original this. The original architecture had a Bluetooth receiver and retransmitted over Bluetooth and I'm thinking aloud as I recorded this.
+
+Actually what I realized was that that's a really dumb architecture because WI fi is much more reliable than Bluetooth for propagating audio across the local network. So that's basically the kind of V2 idea for it. Use case being that your phone is what you hold all day and I personally actually get very good results using my phone like I'm doing now. I'm literally holding my phone up to my mouth. It's the, you know, quick and dirty way to get fairly decent input for ASR at least.
+
+So app toggle over to a different source, route it through the server, proxy it through the server locally I guess and send it over to whatever your device you're on. Use case two, you have a wired headset connected to your phone, phones in your pocket. You move over to your laptop, swap over to laptop and the audio streams, excuse me, through the server to the laptop where you've got a client and that client is essentially running the dictation. It would mean every client, every client device would need to have my local dictation model on it, which is currently called Hebrush and I guess probably would ideally need to add support to that for.
+
+For this which is basically, I guess instead of a local microphone source, you have a streaming microphone source through the network. I can't remember if Icecast or what. The best and kind of most robust and classic parameters are for handling streaming audio, but for dictation it would need to be, let's just assume it's coming into the phone through a Bluetooth headset. It's not going to be like super high quality, super high bit rate. It would need.
+
+It would need More to be just like reliable at rounding that stream around. Obviously if you're going to be sending it to a remote, you're going to have a bit more latency, but. And then it would even be traveling through a tailscale tunnel. It sounds to me like kind of, I don't know, slightly crazy idea. But I also feel actually could probably work with a bit of finagling and with Claude co doing all his magic.
+
+So that's where I'll park this idea for the moment. Just wanted to jot down the note for how I think this could. This could work because as someone using dictation all day, throughout the day and just kind of swapping around between devices as my day changes, as I'm going in and out and sometimes co working spaces and whatnot, being able to say my phone is like, that's what I use for dictation. Then I use this app to just pop it out. Instead of, you know, the hub and spoke approach, essentially, that is the idea.
+
+We should also include a prior, prior art review. Be intrigued to know if anyone has thought about building something like this. And the hub and spoke model could be. I mean, I guess, I guess it would only really make sense with a mobile device as the, as the sending stream. I was going to say you could use it for desktop to.
+
+Hey, that would make a bit of sense. I mean it could be desktop as the. As the streamer, let's call it in the architecture and using voice input on remotes. But I feel like that's a much more marginal use case than what I'm envisioning. So that's the idea.
+
+I will now pop it up, transcribe it and park it for the moment for future exploration. But I do actually have the early APK prototype already ready on my phone and I just haven't actually haven't even tested it yet because Claude Opus 5.5 is quicker and faster than I can keep up with in trying out things he's made for me. So that's kind of amazing. But I'm looking forward to trying that. That'll be a good way to actually just battle test the first viability.
+
+But as I haven't even done that. Yes, I thought I'd record this just while this idea is fresh on my head because it could be the more elegant way to actually architect this.

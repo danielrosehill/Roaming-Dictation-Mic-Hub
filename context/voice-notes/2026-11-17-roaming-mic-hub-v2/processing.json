@@ -1,0 +1,7 @@
+{
+  "source": {"drive_file_id": "1Xwxwr0wzwu1mRM5w6iqdVKmZLcGxToNI", "drive_name": "2026_11_17_16_32_15.opus", "drive_folder_id": "1FBdCBdxL_td4vNth7URpIx7KBF-PPGXY", "created": "2026-11-17T14:41:35Z", "bytes": 2919615},
+  "audio": {"committed": "polished", "polish": {"chain": "Sidon v0.1 (sarulab-speech/sidon-v0.1) on Modal GPU, then two-pass ffmpeg loudnorm, mono 96 kbps MP3", "duration_before_s": 535.69, "duration_after_s": 535.82, "lufs_before": -21.98, "lufs_after": -16.91}},
+  "asr": {"provider": "assemblyai", "model": "universal", "transcript_id": "ca76e2e0-2b34-4f4d-8417-8d81f54733cd", "audio_duration_s": 536, "audio_transcribed": "original opus", "word_boost": ["Sidon", "Modal"]},
+  "derived": ["README.md", "CLAUDE.md"],
+  "processed": "2026-11-17"
+}
